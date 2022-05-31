@@ -5,7 +5,7 @@ function add_fun(){
     amt = Number(amt);
     if(amt<0){
         var ht = '<li class="minus">'+
-        txt+'<span>'+amt+'</span><button class="delete-btn">x</button></li>';
+        txt+'<span>'+amt+'</span><button onclick="delete_item(this)" class="delete-btn">x</button></li>';
         document.getElementById('list').innerHTML+=ht;
         income = document.getElementById('money-minus').textContent;
         var res = "";
@@ -17,7 +17,7 @@ function add_fun(){
     }
     else{
         var ht = '<li class="plus">'+
-        txt+'<span>'+amt+'</span><button class="delete-btn">x</button></li>';
+        txt+'<span>'+amt+'</span><button onclick="delete_item(this)" class="delete-btn">x</button></li>';
         document.getElementById('list').innerHTML+=ht;
         income = document.getElementById('money-plus').textContent;
         var res = "";
@@ -40,4 +40,7 @@ function add_fun(){
     res = Number(res) + Number(res1);
     document.getElementById('balance').innerHTML = '$'+res;
     
+}
+function delete_item(t){
+    t.closest('li').style.display='none';
 }
