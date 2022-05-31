@@ -13,7 +13,7 @@ function add_fun(){
             res+=income[i];
         }
         income = Number(res)+Number(amt);
-        document.getElementById('money-minus').innerHTML = '-$'+income*-1;
+        document.getElementById('money-minus').innerHTML = '-$'+income;
     }
     else{
         var ht = '<li class="plus">'+
