@@ -12,8 +12,8 @@ function add_fun(){
         for(i=2;i<income.length;i++){
             res+=income[i];
         }
-        income = Number(res)+Number(amt);
-        document.getElementById('money-minus').innerHTML = '-$'+income;
+        income = Number(res)-Number(amt);
+        document.getElementById('money-minus').innerHTML = '-$'+Math.abs(income);
     }
     else{
         var ht = '<li class="plus">'+
@@ -37,7 +37,7 @@ function add_fun(){
     for(i=2;i<exp.length;i++){
         res1+=exp[i];
     }
-    res = Number(res) + Number(res1);
+    res = Number(res) - Number(res1);
     document.getElementById('balance').innerHTML = '$'+res;
     
 }
