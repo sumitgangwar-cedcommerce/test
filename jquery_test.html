@@ -52,7 +52,7 @@
            $pass = $('#password').val();
            $len = user.length;
            for(i=0;i<$len;i++){
-               if(user[i][i][2]==$name && user[i][i][3]){
+               if(user[i][i][2]==$name && user[i][i][3]==$pass){
                     if(user[i][i][5]=='guest'){
                         $txt = "Welcome:"+user[i][i][1];
                         $('#res').html($txt);
