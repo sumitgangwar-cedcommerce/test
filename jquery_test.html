@@ -61,13 +61,13 @@
                     else{
                         $txt = "Welcome:"+user[i][i][1];
                         $('#res').html($txt);
-                        $txt = "<table><tr><td>Unique Id</td><td>Name</td><td>City</td><td>Role</td><td>Password</td><td>Action</td></tr>";
+                        $txt = "<table><tr><td>Unique Id</td><td>Name</td><td>Email</td><td>Password</td><td>City</td><td>Role</td><td>Delete<td></tr>";
                         for(i=0;i<$len;i++){
                             $txt+="<tr>"
                                 for(j=0;j<6;j++){
                                     $txt+="<td>"+user[i][i][j]+"</td>";
                                 }
-                                $txt+="</tr>";
+                                $txt+="<td class='delete'>X</td></tr>";
                                 
                         }
                         $('#tab').html($txt);
@@ -79,6 +79,9 @@
         //        console.log(val[1]);
         //    }
            
+        });
+        $("#tab").on("click" , ".delete",  function(){
+            $(this).closest('tr').css("display" , "none");
         });
         
     });
