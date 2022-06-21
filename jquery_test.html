@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <table>
+            <tr>
+                <td colspan="2"><b>Login Form</b></td>
+            </tr>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="submit">Submit</button></td>
+            </tr>
+        </table>
+        <div id="res">
+
+        </div>
+        <div id="tab">
+            
+        </div>
+    </center>
+</body>
+<script>
+    $(document).ready(function(){
+        //console.log([{1 : 2 , 3 :3},{2 :3 , 4: 5}]);
+        user = [
+            {'0' : ['1' , 'Amit' , 'amit@abc' , '1234' , 'Meerut' , 'guest'] },
+            {'1' : ['2' , 'Shiv' , 'shiv@abc' , '1234' , 'Meerut' , 'admin'] },
+            {'2' : ['3' , 'Kamal' , 'kamal@abc' , '1234' , 'Meerut' , 'guest'] },
+            {'3' : ['4' , 'Vaibhav' , 'vaibhav@abc' , '1234' , 'Meerut' , 'guest'] },
+            {'4' : ['5' , 'Sachin' , 'sachin@abc' , '1234' , 'Meerut' , 'guest'] }
+        ];
+      
+        
+        $("#submit").click(function(){
+            //console.log("xsdf");
+           // console.log(user[0]['0']);
+           $name = $('#name').val();
+           $pass = $('#password').val();
+           $len = user.length;
+           for(i=0;i<$len;i++){
+               if(user[i][i][2]==$name && user[i][i][3]){
+                    if(user[i][i][5]=='guest'){
+                        $txt = "Welcome:"+user[i][i][1];
+                        $('#res').html($txt);
+                        break;
+                    }
+                    else{
+                        $txt = "Welcome:"+user[i][i][1];
+                        $('#res').html($txt);
+                        $txt = "<table><tr><td>Unique Id</td><td>Name</td><td>City</td><td>Role</td><td>Password</td><td>Action</td></tr>";
+                        for(i=0;i<$len;i++){
+                            $txt+="<tr>"
+                                for(j=0;j<6;j++){
+                                    $txt+="<td>"+user[i][i][j]+"</td>";
+                                }
+                                $txt+="</tr>";
+                                
+                        }
+                        $('#tab').html($txt);
+                        break; 
+                    }  
+               }
+           }
+        //    foreach(user as val){
+        //        console.log(val[1]);
+        //    }
+           
+        });
+        
+    });
+</script>
+</html>
